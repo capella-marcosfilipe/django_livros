@@ -1,3 +1,8 @@
+'''
+This model represents the profiles in our system in their different roles.
+
+ROLE_CHOICE comes from models.__init__ and they are: Admin, Médico (doctor) and Paciente (patient), being this last one default.
+'''
 from medicSearch.models import *
 
 class Profile(models.Model):

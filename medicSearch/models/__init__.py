@@ -16,3 +16,10 @@ ROLE_CHOICE = (
 
 # Models in use:
 from .Profile import Profile
+from .Speciality import Speciality
+from .DayWeek import DayWeek
+from .State import State
+from .City import City
+from .Neighborhood import Neighborhood
+from .Address import Address
+from .Rating import Rating
