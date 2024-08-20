@@ -1,6 +1,8 @@
-from django.http import HttpResponse
-from medicSearch.models import Profile, Speciality
 from django.db.models import Q
+from django.shortcuts import render
+
+from medicSearch.models import Profile
+
 
 def list_medics_view(request):
     # Possible filters
@@ -27,7 +29,10 @@ def list_medics_view(request):
         elif state is not None:
             medics = medics.filter(addresses__neighborhood__city__state=state)
     
-    print(medics.all())
+    # Dictionary containing the result of the query. Context is the data that can be accessed by our template.
+    context = {
+        'medics': medics
+    }
     
-    return HttpResponse("Listagem 1 ou mais médicos")
+    return render(request, template_name='medic/medics.html', context=context, status=200)
     
